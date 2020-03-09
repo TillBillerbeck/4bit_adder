@@ -1,0 +1,6 @@
+C:\Adder\Gatter\obj\Debug\Gatter_Lib.csprojAssemblyReference.cache
+C:\Adder\Gatter\obj\Debug\Gatter_Lib.csproj.CoreCompileInputs.cache
+C:\Adder\Gatter\bin\Debug\Gatter.dll
+C:\Adder\Gatter\bin\Debug\Gatter.pdb
+C:\Adder\Gatter\obj\Debug\Gatter.dll
+C:\Adder\Gatter\obj\Debug\Gatter.pdb
