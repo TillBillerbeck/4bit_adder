@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gatter
 {
@@ -10,30 +6,55 @@ namespace Gatter
     {
         private bool cIn;
 
+        public new void eingeben(bool e0, bool e1, bool cIn)
+        {
+            this.e0 = e0;
+            this.e1 = e1;
+            this.cIn = cIn;
+        }
+
         public override void berechnen()
         {
-            // s->.Item1, c->.Item2
+            // Aus dem XOR kommt die Summe
+            // Aus dem AND kommt der CarryOut
             // In den ersten Halbadder kommen e0 und e1
             var halbAdder1 = HalbAdder.Berechnen(this.e0, this.e1);
             // In den zweiten Halbadder kommen der übergebene Übertrag und die Summe aus dem ersten Halbadder
-            var halbAdder2 = HalbAdder.Berechnen(halbAdder1.. , this.cIn);
+            var halbAdder2 = HalbAdder.Berechnen(halbAdder1.Sum, this.cIn);
 
-            this.s = halbAdder2.Item2;
+            // Die Summe ist die Summe aus dem zweiten Halbadder
+            this.sum = halbAdder2.Sum;
 
-            this.cOut = OrGatter.Berechnen(halbAdder1.Item2, halbAdder1.Item1);
+            // Das CarryOut wird aus den CarryOuts der beiden Halbadder berechnet
+            this.cOut = OrGatter.Berechnen(halbAdder1.CarryOut, halbAdder2.CarryOut);
         }
 
-        public new static Tuple<bool, bool> Berechnen(bool e0, bool e1, bool cIn)
+        public static AdderOutput Berechnen(bool e0, bool e1, bool cIn)
         {
-            // s->.Item1, c->.Item2
             var halbAdder1 = HalbAdder.Berechnen(e0, e1);
-            var halbAdder2 = HalbAdder.Berechnen(halbAdder1.Item2, cIn);
+            var halbAdder2 = HalbAdder.Berechnen(halbAdder1.Sum, cIn);
 
-            bool s = halbAdder2.Item2;
+            bool s = halbAdder2.Sum;
 
-            bool cOut = OrGatter.Berechnen(halbAdder1.Item2, halbAdder1.Item1);
+            bool cOut = OrGatter.Berechnen(halbAdder1.CarryOut, halbAdder2.CarryOut);
 
-            return new Tuple<bool, bool>(s, cOut);
+            return new AdderOutput(cOut: cOut, sum: s);
+        }
+
+        public static AdderOutput Berechnen(decimal e0, decimal e1, bool cIn)
+        {
+            bool e0_bool = Convert.ToBoolean(e0);
+            bool e1_bool = Convert.ToBoolean(e1);
+            return VollAdder.Berechnen(e0_bool, e1_bool, cIn);
+        }
+
+
+        public static AdderOutput Berechnen(decimal e0, decimal e1, decimal cIn)
+        {
+            bool e0_bool = Convert.ToBoolean(e0);
+            bool e1_bool = Convert.ToBoolean(e1);
+            bool cIn_bool = Convert.ToBoolean(cIn);
+            return VollAdder.Berechnen(e0_bool, e1_bool, cIn_bool);
         }
     }
 }

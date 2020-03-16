@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gatter
+﻿namespace Gatter
 {
     public abstract class GatterSingleInput
     {
@@ -14,7 +8,7 @@ namespace Gatter
         protected bool a;
         public bool Result { get { return a; } }
 
-        public GatterSingleInput() {}
+        public GatterSingleInput() { }
 
         public virtual void eingeben(bool e0)
         {

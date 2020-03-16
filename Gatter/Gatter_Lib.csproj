@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdderOutput.cs" />
     <Compile Include="GatterSingleInput.cs" />
     <Compile Include="GatterDualInput.cs" />
     <Compile Include="GatterElements.cs" />

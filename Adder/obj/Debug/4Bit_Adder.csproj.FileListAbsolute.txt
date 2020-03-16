@@ -1,0 +1,12 @@
+C:\Users\Till\Source\Repos\4bit_adder\Adder\bin\Debug\Adder.exe.config
+C:\Users\Till\Source\Repos\4bit_adder\Adder\bin\Debug\Adder.exe
+C:\Users\Till\Source\Repos\4bit_adder\Adder\bin\Debug\Adder.pdb
+C:\Users\Till\Source\Repos\4bit_adder\Adder\bin\Debug\Gatter.dll
+C:\Users\Till\Source\Repos\4bit_adder\Adder\bin\Debug\Gatter.pdb
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\4Bit_Adder.csprojAssemblyReference.cache
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\Adder.FrmAdder.resources
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\Adder.Properties.Resources.resources
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\4Bit_Adder.csproj.GenerateResource.cache
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\4Bit_Adder.csproj.CopyComplete
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\Adder.exe
+C:\Users\Till\Source\Repos\4bit_adder\Adder\obj\Debug\Adder.pdb

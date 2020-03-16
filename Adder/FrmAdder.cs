@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gatter;
+using System;
 using System.Windows.Forms;
 
 namespace Adder
@@ -161,10 +162,21 @@ namespace Adder
             if (this.num1 + this.num2 > 15)
             {
                 lblMessage.Text = "Zu hoch";
-            } else
+                return;
+            }
+            else
             {
                 lblMessage.Text = "OK";
             }
+            var output0 = HalbAdder.Berechnen(this.numNum1Bit0.Value, this.numNum2Bit0.Value);
+            this.numResultBit0.Value = Convert.ToDecimal(output0.Sum);
+            var output1 = VollAdder.Berechnen(this.numNum1Bit1.Value, this.numNum2Bit1.Value, output0.CarryOut);
+            this.numResultBit1.Value = Convert.ToDecimal(output1.Sum);
+            var output2 = VollAdder.Berechnen(this.numNum1Bit2.Value, this.numNum2Bit2.Value, output1.CarryOut);
+            this.numResultBit2.Value = Convert.ToDecimal(output2.Sum);
+            var output3 = VollAdder.Berechnen(this.numNum1Bit3.Value, this.numNum2Bit3.Value, output2.CarryOut);
+            this.numResultBit3.Value = Convert.ToDecimal(output3.Sum);
+            this.numResultDec.Value = this.num1 + this.num2;
         }
     }
 }
